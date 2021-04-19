@@ -20,7 +20,8 @@ class CreateRoomsTable extends Migration
             $table->foreign('shift_id')->references('id')->on('shifts');
             $table->unsignedBigInteger('section_id');
             $table->foreign('section_id')->references('id')->on('sections');
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

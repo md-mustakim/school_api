@@ -32,6 +32,7 @@ class CreateStudentsTable extends Migration
             $table->string('image',50);
             $table->string('status',2);
             $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
